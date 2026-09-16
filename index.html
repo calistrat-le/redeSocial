@@ -13,10 +13,13 @@
     <div class="phone-frame">
         <div class="phone-screen">
 
+            <!-- Balão de Notificação Flutuante -->
+            <div id="toastNotification" class="toast-notification">Repostado com sucesso! ⚡</div>
+            <div id="toastBookmark" class="toast-notification">Salvo nos favoritos! 📖</div>
+
             <!-- Cabeçalho do Post -->
             <div class="post-header">
                 <div class="user-info">
-                    <!-- Avatar: Hermione Granger -->
                     <img class="avatar-small" src="https://www.davishighnews.com/wp-content/uploads/2021/01/hermione-675x900.jpg" alt="Hermione Granger">
                     <span class="username">hermione.granger</span>
                 </div>
@@ -53,22 +56,24 @@
                         <span class="comments-count">142</span>
                     </button>
 
-                    <button class="action-btn">
+                    <!-- Botão Repostar -->
+                    <button class="action-btn repost-btn">
                         <svg viewBox="0 0 24 24">
                             <polyline points="17 1 21 5 17 9"></polyline>
                             <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
                             <polyline points="7 23 3 19 7 15"></polyline>
                             <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
                         </svg>
-                        84
+                        <span class="repost-count">84</span>
                     </button>
 
-                    <button class="action-btn">
+                    <!-- Botão Enviar (Compartilhar por Mensagem) -->
+                    <button class="action-btn send-btn">
                         <svg viewBox="0 0 24 24">
                             <line x1="22" y1="2" x2="11" y2="13"></line>
                             <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                         </svg>
-                        36
+                        <span class="send-count">36</span>
                     </button>
                 </div>
 
@@ -117,6 +122,35 @@
                 <div class="comment-input-area">
                     <input type="text" id="commentInput" placeholder="Comentar como hermione.granger...">
                     <button id="sendCommentBtn">Publicar</button>
+                </div>
+            </div>
+
+            <!-- Modal de Envio Fictício (Personagens Harry Potter) -->
+            <div class="send-modal" id="sendModal">
+                <div class="send-header">
+                    <h3>Enviar para...</h3>
+                    <button class="close-send">&times;</button>
+                </div>
+                <div class="characters-list">
+                    <div class="character-item" data-name="Harry Potter">
+                        <img src="https://images.ctfassets.net/usf17styqxfu/43XCVHVpXiiIGmmWIsiygs/725fb635a8f4c71a39f046d1fa7d1a5a/HarryPotter_WB_F7_HarryPotterOnAWhiteBackground_Still_103016_Port.jpg" alt="Harry">
+                        <span>Harry Potter</span>
+                    </div>
+                    <div class="character-item" data-name="Hermione Granger">
+                        <img src="https://www.davishighnews.com/wp-content/uploads/2021/01/hermione-675x900.jpg" alt="Hermione">
+                        <span>Hermione Granger</span>
+                    </div>
+                    <div class="character-item" data-name="Draco Malfoy">
+                        <img src="https://static.wikia.nocookie.net/harrypotter/images/1/1c/Draco_Malfoy_DP.png" alt="Draco">
+                        <span>Draco Malfoy</span>
+                    </div>
+                    <div class="character-item" data-name="Ron Weasley">
+                        <img src="https://static.wikia.nocookie.net/harrypotter/images/7/7a/Ron_Weasley_2.jpg" alt="Ron">
+                        <span>Ron Weasley</span>
+                    </div>
+                </div>
+                <div class="send-action-area">
+                    <button id="confirmSendBtn" disabled>Enviar para <span>ninguém</span></button>
                 </div>
             </div>
 

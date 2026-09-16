@@ -24,13 +24,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // Elementos de Salvar
     const toastBookmark = document.getElementById("toastBookmark");
 
-    // Elementos de Envio (Harry Potter characters)
+    // Elementos de Enviar (Harry Potter characters)
     const sendBtn = document.querySelector(".send-btn");
+    const sendSvg = sendBtn.querySelector("svg");
     const sendCountSpan = document.querySelector(".send-count");
     const sendModal = document.getElementById("sendModal");
     const closeSendBtn = document.querySelector(".close-send");
     const characterItems = document.querySelectorAll(".character-item");
     const confirmSendBtn = document.getElementById("confirmSendBtn");
+    const targetNameSpan = document.getElementById("targetName");
+    const toastSend = document.getElementById("toastSend");
 
     let baseLikes = 10000;
     let totalComments = 142;
@@ -116,13 +119,11 @@ document.addEventListener("DOMContentLoaded", () => {
         totalReposts++;
         repostCountSpan.textContent = totalReposts;
         
-        // Animação de giro
         repostSvg.classList.add("spin-animation");
         setTimeout(() => {
             repostSvg.classList.remove("spin-animation");
         }, 400);
 
-        // Balãozinho na tela
         toastNotification.classList.add("show");
         setTimeout(() => {
             toastNotification.classList.remove("show");
@@ -143,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
             characterItems.forEach(c => c.classList.remove("selected"));
             item.classList.add("selected");
             selectedCharacter = item.getAttribute("data-name");
-            confirmSendBtn.querySelector("span").textContent = selectedCharacter;
+            targetNameSpan.textContent = selectedCharacter;
             confirmSendBtn.classList.add("enabled");
         });
     });
@@ -154,10 +155,23 @@ document.addEventListener("DOMContentLoaded", () => {
             sendCountSpan.textContent = totalSends;
             sendModal.classList.remove("active");
             
+            // Animação de giro no aviãozinho de enviar
+            sendSvg.classList.add("spin-animation");
+            setTimeout(() => {
+                sendSvg.classList.remove("spin-animation");
+            }, 400);
+
+            // Mensagem flutuante de sucesso
+            toastSend.textContent = `Mensagem enviada para ${selectedCharacter}! 🦉`;
+            toastSend.classList.add("show");
+            setTimeout(() => {
+                toastSend.classList.remove("show");
+            }, 2000);
+            
             // Reseta seleção
             characterItems.forEach(c => c.classList.remove("selected"));
             confirmSendBtn.classList.remove("enabled");
-            confirmSendBtn.querySelector("span").textContent = "ninguém";
+            targetNameSpan.textContent = "ninguém";
             selectedCharacter = null;
         }
     });

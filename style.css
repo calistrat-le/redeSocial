@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +15,6 @@ body {
   padding: 20px;
 }
 
-/* Moldura estilo smartphone com borda em gradiente */
 .phone-frame {
   width: 100%;
   max-width: 380px;
@@ -25,14 +25,13 @@ body {
 }
 
 .phone-screen {
-  background: #ede3e3;
+  background: #121212;
   border-radius: 32px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
-/* Cabeçalho do Post */
 .post-header {
   display: flex;
   align-items: center;
@@ -56,20 +55,20 @@ body {
 .username {
   font-weight: 600;
   font-size: 14px;
-  color: #0e0c0c;
+  color: #ffffff;
 }
 
 .more-options {
   cursor: pointer;
-  color: #0e1012;
+  color: #ffffff;
 }
 
-/* Mídia / Foto */
 .post-media {
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 5;
   background-color: #eee;
+  cursor: pointer;
 }
 
 .post-media img.main-img {
@@ -79,41 +78,6 @@ body {
   display: block;
 }
 
-/* Avatar pequeno com ícone '+' sobreposto na foto */
-.user-badge {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  width: 44px;
-  height: 44px;
-}
-
-.user-badge img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 2px solid #fffbfb;
-  object-fit: cover;
-}
-
-.user-badge .plus-icon {
-  position: absolute;
-  bottom: -2px;
-  right: -2px;
-  background: #561296;
-  color: rgb(18, 5, 5);
-  font-size: 10px;
-  font-weight: bold;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #ffffff;
-}
-
-/* Ações (Curtir, Comentar, Repostar, Direct, Salvar) */
 .post-actions {
   display: flex;
   align-items: center;
@@ -147,30 +111,41 @@ body {
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
+  transition: transform 0.15s ease;
 }
 
-/* Texto de Curtidas */
+/* Estado Curtido */
+.action-btn.liked svg {
+  fill: #ef4444;
+  stroke: #ef4444;
+}
+
+/* Estado Salvo */
+.bookmark-btn.bookmarked svg {
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
 .post-details {
   padding: 0 16px 12px 16px;
   font-size: 13px;
   color: #e0e5ec;
 }
 
-.likes {
+.likes-text {
   color: #e8ebef;
 }
 
-.likes strong {
+.likes-text strong {
   color: #e9eef6;
 }
 
-/* Barra de Navegação Inferior */
 .nav-bar {
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 12px 0 16px 0;
-  border-top: 1px solid #110f0f;
+  border-top: 1px solid #222;
   background: #131010;
 }
 
@@ -186,4 +161,3 @@ body {
   stroke: currentColor;
   stroke-width: 2;
 }
-

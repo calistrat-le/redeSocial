@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post Social Media</title>
+    <title>Post Harry Potter - Social Media</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -17,8 +16,9 @@
             <!-- Cabeçalho do Post -->
             <div class="post-header">
                 <div class="user-info">
-                    <img class="avatar-small" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" alt="Avatar">
-                    <span class="username">le.androh</span>
+                    <!-- Avatar: Hermione Granger -->
+                    <img class="avatar-small" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150" alt="Hermione Granger">
+                    <span class="username">hermione.granger</span>
                 </div>
                 <div class="more-options">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -29,9 +29,9 @@
                 </div>
             </div>
 
-            <!-- Mídia Principal -->
+            <!-- Mídia Principal (Castelo de Hogwarts) -->
             <div class="post-media">
-                <img class="main-img" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600" alt="User overlay">
+                <img class="main-img" src="https://images.unsplash.com/photo-1599839575945-a9e5af0c3fae?w=800" alt="Hogwarts Castle">
             </div>
 
             <!-- Barra de Interações -->
@@ -42,14 +42,15 @@
                         <svg viewBox="0 0 24 24">
                             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                         </svg>
-                        <span class="likes-count">0</span>
+                        <span class="likes-count">10.0K</span>
                     </button>
 
-                    <button class="action-btn">
+                    <!-- Botão Comentários -->
+                    <button class="action-btn comment-btn">
                         <svg viewBox="0 0 24 24">
                             <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
                         </svg>
-                        57
+                        <span class="comments-count">142</span>
                     </button>
 
                     <button class="action-btn">
@@ -59,7 +60,7 @@
                             <polyline points="7 23 3 19 7 15"></polyline>
                             <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
                         </svg>
-                        24
+                        84
                     </button>
 
                     <button class="action-btn">
@@ -67,7 +68,7 @@
                             <line x1="22" y1="2" x2="11" y2="13"></line>
                             <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                         </svg>
-                        6
+                        36
                     </button>
                 </div>
 
@@ -81,7 +82,10 @@
 
             <!-- Detalhes / Curtidas -->
             <div class="post-details">
-                <p class="likes-text">Liked by <strong>liam_beanz99</strong> and <strong class="likes-subcount">0 others</strong></p>
+                <p class="likes-text">Curtido por <strong>harry.potter</strong> e <strong class="likes-subcount">outras 10.000 pessoas</strong></p>
+                <p class="post-caption" style="margin-top: 6px; font-size: 13px; color: #fff;">
+                    <strong>hermione.granger</strong> "Hogwarts é o nosso verdadeiro lar..." ✨🏰🪄
+                </p>
             </div>
 
             <!-- Navegação Inferior -->
@@ -91,6 +95,29 @@
                 <div class="nav-item"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></div>
                 <div class="nav-item"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg></div>
                 <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
+            </div>
+
+            <!-- Modal / Gaveta de Comentários -->
+            <div class="comments-modal" id="commentsModal">
+                <div class="comments-header">
+                    <h3>Comentários</h3>
+                    <button class="close-comments">&times;</button>
+                </div>
+                <div class="comments-list">
+                    <div class="comment-item">
+                        <strong>harry.potter</strong> Nem acredito que passamos por tudo aquilo ali! ⚡
+                    </div>
+                    <div class="comment-item">
+                        <strong>ron.weasley</strong> Uau, essa foto ficou brilhante! Mas você já checou a seção restrita da biblioteca sobre isso? 🍗😂
+                    </div>
+                    <div class="comment-item">
+                        <strong>draco.malfoy</strong> Meu pai vai saber sobre esse castelo. 🙄
+                    </div>
+                </div>
+                <div class="comment-input-area">
+                    <input type="text" id="commentInput" placeholder="Comentar como hermione.granger...">
+                    <button id="sendCommentBtn">Publicar</button>
+                </div>
             </div>
 
         </div>

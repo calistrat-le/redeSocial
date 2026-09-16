@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -21,15 +20,18 @@ body {
   border-radius: 40px;
   padding: 8px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-  background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  /* Tema de Cores Mágico / Hogwarts (Dourado e Bordô) */
+  background: linear-gradient(135deg, #ae0001 0%, #740001 35%, #d3a625 70%, #eea825 100%);
 }
 
 .phone-screen {
+  position: relative;
   background: #121212;
   border-radius: 32px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 680px;
 }
 
 .post-header {
@@ -50,6 +52,7 @@ body {
   height: 36px;
   border-radius: 50%;
   object-fit: cover;
+  border: 1.5px solid #d3a625;
 }
 
 .username {
@@ -66,7 +69,7 @@ body {
 .post-media {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 4;
   background-color: #eee;
   cursor: pointer;
 }
@@ -147,6 +150,7 @@ body {
   padding: 12px 0 16px 0;
   border-top: 1px solid #222;
   background: #131010;
+  margin-top: auto;
 }
 
 .nav-item {
@@ -160,4 +164,96 @@ body {
   fill: none;
   stroke: currentColor;
   stroke-width: 2;
+}
+
+/* Modal de Comentários */
+.comments-modal {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 75%;
+  background: #1a1a1a;
+  border-radius: 24px 24px 0 0;
+  display: flex;
+  flex-direction: column;
+  transition: bottom 0.3s ease-in-out;
+  z-index: 10;
+  box-shadow: 0 -10px 25px rgba(0,0,0,0.5);
+}
+
+.comments-modal.active {
+  bottom: 0;
+}
+
+.comments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #333;
+  color: #fff;
+  font-size: 15px;
+}
+
+.close-comments {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.comments-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.comment-item {
+  color: #ddd;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.comment-item strong {
+  color: #d3a625;
+  margin-right: 6px;
+}
+
+.comment-input-area {
+  display: flex;
+  padding: 12px 16px;
+  border-top: 1px solid #333;
+  background: #121212;
+  gap: 10px;
+}
+
+.comment-input-area input {
+  flex: 1;
+  background: #262626;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 16px;
+  color: #fff;
+  font-size: 13px;
+  outline: none;
+}
+
+.comment-input-area button {
+  background: #d3a625;
+  border: none;
+  border-radius: 20px;
+  color: #121212;
+  font-weight: 700;
+  padding: 0 16px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.comment-input-area button:hover {
+  background: #eea825;
 }
